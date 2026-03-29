@@ -57,6 +57,7 @@
     <div id="ui" style="display:none;">
         <div>SCORE: <span id="score">0</span></div>
         <div>BEST: <span id="highScore">0</span></div>
+        <button onclick="pauseGame()" style="position:absolute; top:60px; right:20px; width:auto; padding:8px 16px; font-size:16px; background:#555;">MENU</button>
     </div>
 
     <!-- Game Over -->
@@ -448,6 +449,13 @@
         function backToTitle() {
             document.getElementById('usernameScreen').style.display = 'none';
             document.getElementById('mainMenu').style.display = 'block';
+        }
+
+        function pauseGame() {
+            gameRunning = false;
+            document.getElementById('ui').style.display = 'none';
+            document.getElementById('mainMenu').style.display = 'block';
+            gameState = 'menu';
         }
 
         // Controls
